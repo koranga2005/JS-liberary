@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link href="rahul koranga.html/index.html">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- Tutorial Overlay -->
+  <div id="tutorial-overlay" class="overlay">
+    <div class="tutorial-step" data-step="1">
+      <h2>Welcome to Koranga Hojari</h2>
+      <p>Discover our production & marketing services.</p>
+      <button class="next-btn">Next →</button>
+    </div>
+    <div class="tutorial-step" data-step="2">
+      <h2>Explore Collections</h2>
+      <p>Scroll through our rotating cube & product cards.</p>
+      <button class="next-btn">Next →</button>
+    </div>
+    <div class="tutorial-step" data-step="3">
+      <h2>Contact Us</h2>
+      <p>Find payment options & connect with us below.</p>
+      <button class="finish-btn">
+        <a href="rahul koranga.html/index.html">Start Browsing</a>
+      </button>
+    </div>
+  </div>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ once: true, duration: 800 });
+  </script>
+  <section data-aos="fade-right" class="header"> … </section>
+  <div class="card" data-aos="zoom-in"> … </div>
+  <div class="slider" data-aos="fade-up"> … </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.10.0/lottie.min.js"></script>
+  <div id="lottie-logo" style="width:150px; margin:auto;"></div>
+  <div id="preloader">
+    <div class="spinner"></div>
+  </div>
+
+  <script>
+    const overlay = document.getElementById("tutorial-overlay");
+    const steps = Array.from(document.querySelectorAll(".tutorial-step"));
+    let current = 0;
+
+    function showStep(i) {
+      steps.forEach((s, idx) => {
+        s.style.display = idx === i ? "block" : "none";
+      });
+    }
+
+    overlay.addEventListener("click", e => {
+      if (e.target.matches(".next-btn")) {
+        current++;
+        showStep(current);
+      } else if (e.target.matches(".finish-btn")) {
+        overlay.style.display = "none";
+      }
+    });
+
+    showStep(0);
+  </script>
+  <script>
+    lottie.loadAnimation({
+      container: document.getElementById('lottie-logo'),
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: 'https://assets2.lottiefiles.com/datafiles/.../logo-animation.json'
+    });
+  </script>
+  window.addEventListener('load', ()=>{
+  document.getElementById('preloader').style.display = 'none';
+  });
+
+
+</body>
+
+</html>
