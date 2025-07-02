@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: skyblue;
+}
+.container {
+  max-width: 1200px;
+  min-height: 800px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+.grid {
+  display: grid;
+  gap: 20px;
+  grid-template-areas:
+    "rahul rahul hero"
+    "sahil sahil hero"
+    "sahil sahil hero";
+}
+.box1 {
+  grid-area: rahul;
+  background: lightcoral;
+}
+.box2 {
+  grid-area: sahil;
+  background: lightgreen;
+}
+.box3 {
+  grid-area: hero;
+  background: lightpink;
+}
+
+@media screen and (width > 1200px) {
+  .grid {
+    grid-template-areas:
+      "rahul rahul hero"
+      "sahil sahil hero"
+      "sahil sahil hero";
+  }
+}
+@media screen and (width < 1200px) and (width > 450px) {
+  .grid {
+    grid-template-areas:
+      "rahul rahul hero"
+      "sahil sahil hero"
+      "sahil sahil hero"
+      "sahil sahil hero"
+      ;
+  }
+}
+@media screen and (width < 450px) {
+  .grid {
+    grid-template-areas:
+      "rahul rahul"
+      "sahil sahil"
+      "sahil sahil"
+      "sahil sahil"
+      "hero hero"
+      "hero hero"
+      ;
+  }
+}
